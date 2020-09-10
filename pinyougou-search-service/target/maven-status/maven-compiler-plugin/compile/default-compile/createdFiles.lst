@@ -1,0 +1,4 @@
+com\pinyougou\search\service\impl\SpringTask.class
+com\pinyougou\search\service\impl\ItemDeleteListener.class
+com\pinyougou\search\service\impl\ItemSearchListener.class
+com\pinyougou\search\service\impl\ItemSearchServiceImpl.class

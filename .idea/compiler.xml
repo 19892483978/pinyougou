@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="pinyougou-sellergoods-service" />
+        <module name="pinyougou-common" />
+        <module name="pinyougoushopweb" />
+        <module name="pinyougousearchservice" />
+        <module name="pinyougou-solr-util" />
+        <module name="pinyougoumanagerweb" />
+        <module name="pinyougouuserservice" />
+        <module name="pinyougouuserinterface" />
+        <module name="pinyougou-shop-web" />
+        <module name="pinyougou-page-service" />
+        <module name="pinyougousearchinterface" />
+        <module name="pinyougoupojo" />
+        <module name="pinyougou-search-web" />
+        <module name="pinyougou-dao" />
+        <module name="pinyougou-user-web" />
+        <module name="pinyougousellergoodsservice" />
+        <module name="pinyougou-manager-web" />
+        <module name="pinyougouuserweb" />
+        <module name="pinyougou-user-interface" />
+        <module name="pinyougoupageservice" />
+        <module name="pinyougoupageinterface" />
+        <module name="pinyougou-portal-web" />
+        <module name="pinyougoudao" />
+        <module name="pinyougouportalweb" />
+        <module name="pinyougousellergoodsinterface" />
+        <module name="pinyougou-page-interface" />
+        <module name="pinyougoucontentservice" />
+        <module name="pinyougou-search-service" />
+        <module name="pinyougou-user-service" />
+        <module name="pinyougou-pojo" />
+        <module name="pinyougou-sellergoods-interface" />
+        <module name="pinyougousolrutil" />
+        <module name="pinyougoucommon" />
+        <module name="pinyougou-content-service" />
+        <module name="pinyougou-search-interface" />
+        <module name="pinyougou-content-interface" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pinyougoucontentinterface" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:task="http://www.springframework.org/schema/task"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc"
+	   xmlns:solr="http://www.springframework.org/schema/data/solr"
+	   xsi:schemaLocation="http://www.springframework.org/schema/data/solr
+  		http://www.springframework.org/schema/data/solr/spring-solr-1.0.xsd
+	   	http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task.xsd"
+>
+
+
+
+	<!--自身访问dubbo注册中心所需要占用的端口,默认的端口是20880
+	另一个服务就要使用端口20882,只有一个服务可以不用配置-->
+    <dubbo:protocol name="dubbo" port="20884"/>
+
+	<dubbo:application name="pinyougou-search-service"/>
+	<dubbo:registry address="zookeeper://192.168.223.133:2181"/>
+    <dubbo:annotation package="com.pinyougou.search.service.impl" />
+
+	<!-- solr服务器地址 -->
+	<solr:solr-server id="solrServer" url="http://127.0.0.1:8080/solr" />
+
+
+	<!-- 构建solr模板，使用solr模板可对索引库进行CRUD的操作 -->
+	<bean id="solrTemplate" class="org.springframework.data.solr.core.SolrTemplate">
+		<constructor-arg ref="solrServer" />
+	</bean>
+
+	<!-- 开器定时任务的注解驱动(支持)   -->
+	<task:annotation-driven/>
+	<!--  注：spring定时任务默认单线程，推荐配置线程池，若不配置多任务下会有问题。  -->
+	<task:scheduler id="poolTaskScheduler" pool-size="10"/>
+</beans>
